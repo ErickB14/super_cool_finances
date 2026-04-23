@@ -366,7 +366,7 @@ All code was reviewed and adapted manually.
 
 ---
 
-## 📄 Curriculum
+## 📄 Resume
 
 You can view my resume here:
 
