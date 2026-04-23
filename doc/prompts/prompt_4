@@ -1,0 +1,5 @@
+Ahora quiero agregar autenticación con JWT y el uso de token:
+- access_token: de corta duración 
+- refresh_token: de larga duración
+
+Sientete libre de sugerir las tablas necesarias para este objetivo asi como los endpoints necesarios. 

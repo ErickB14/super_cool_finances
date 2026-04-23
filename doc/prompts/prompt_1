@@ -1,0 +1,104 @@
+Quiero que me ayudes a construir un backend basico relacionado al control de balances de una cuenta bancaria. 
+
+Objetivo:
+Crear un cascaron funcional de una API REST, sin lógica avanzada.
+
+Framework:
+1) Python 3
+2) FastAPI
+3) SQLAlchemy
+4) PostgreSQL
+5) Pydantic
+
+Requisitos generales:
+* Estructura simple por modulos
+* Código claro y básico, (Nivel basico/intermedio en python)
+* Sin autenticación ni autorización de momento
+* Solo CRUD/operaciones basicas de cuentas y movimientos.
+
+Endpoints a crear:
+
+-------------------
+GET /health
+-------------------
+POST /accounts
+*Payload de entrada:
+  {
+    "owner": "string"
+  }
+*Payload de salida:
+  {
+    "id": 1,
+    "owner": "string",
+    "balance": 0.00,
+    "created_at": "datetime"
+  }
+-------------------
+
+GET /accounts/{account_uuid}/balance
+*Payload de entrada: Solo el uuid del account (account_uuid)
+*Payload de salida:
+  {
+    "account_uuid": "uuid",
+    "balance": 100.50
+  }
+
+-------------------
+
+POST /accounts/{account_uuid}/deposit
+*Payload de entrada:
+    Header param: account_uuid (uuid)
+    {
+      "amount": 50.00,
+      "description": "description"
+    }
+
+*Payload de salida:
+  Data del movimiento
+-------------------
+
+POST /accounts/{account_uuid}/withdraw
+*Payload de entrada:
+  - Path param: account_uuid (uuid)
+  - Body:
+    {
+      "amount": 20.00,
+      "description": "description"
+    }
+*Payload de salida:
+  Data del movimiento
+
+-------------------
+
+GET /accounts/{account_uuid}/ledger
+*Payload de entrada:
+  -Path param: account_uuid (uuid)
+*Payload de salida:
+  Lista de movimientos de balance
+-------------------
+
+Base de datos (basico):
+
+Tabla accounts
+1) id
+2) uuid 
+3) owner 
+4) balance 
+5) created_at 
+
+Tabla balance_hst
+1) id
+2) account_uuid
+3) ttk_tracking_id
+4) disposable
+5) type_tx
+6) amount_tx
+7) cdate
+8) status_tx
+9) description
+
+
+No implementes features avanzadas; solo el esqueleto funcional
+Asegurate de usar Select for update para controlar temas de concurrencia y race conditions.
+Voy a usar probablemente un servicio en la nube, por lo que necesito que dejes parametrizado las variables de entorno (conexion a postgresSQL)
+Construye un YML para deployar en Render (Nube)
