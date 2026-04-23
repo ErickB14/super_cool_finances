@@ -284,6 +284,12 @@ This service is designed to be deployed as a cloud-native application:
 * Environment variables used for secrets
 * HTTPS handled by platform
 
+Production URL:
+
+* https://super-cool-finances.onrender.com
+* Health check: https://super-cool-finances.onrender.com/health
+* Swagger docs: https://super-cool-finances.onrender.com/docs
+
 ---
 
 ## 🧠 Design Notes
