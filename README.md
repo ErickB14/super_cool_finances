@@ -17,11 +17,11 @@ REST microservice for account and balance management, built with FastAPI, SQLAlc
 
 ```mermaid
 graph TD
-    Client --> API[FastAPI Service]
-    API --> Auth[JWT Validation]
-    API --> DB[(PostgreSQL - Neon)]
-    API --> Ledger[Ledger Entries]
-    CLOUD --> Render
+  Render[Render Platform] --> API[FastAPI Service]
+  Client --> API
+  API --> Auth[JWT Validation]
+  API --> DB[(PostgreSQL - Neon)]
+  API --> Ledger[Ledger Entries]
 ```
 
 ---
