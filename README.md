@@ -93,13 +93,19 @@ export DATABASE_URL=<your-neon-connection>
 export JWT_SECRET=<your-secret>
 ```
 
-### 3. Run the service
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the service
 
 ```bash
 uvicorn main:app --reload
 ```
 
-### 4. Open API docs
+### 5. Open API docs
 
 ```
 http://localhost:8000/docs
@@ -291,11 +297,32 @@ This service is designed to be deployed as a cloud-native application:
 
 ## 🧪 Tests
 
+Test strategy:
+
+* Integration tests for core API flows (auth, accounts, deposit/withdraw, idempotency)
+* Isolated tests with FastAPI dependency overrides for selected scenarios (e.g. balance/ledger)
+
 Run tests with:
 
 ```bash
 pytest
 ```
+
+Run coverage report in console:
+
+```bash
+pytest --cov=. --cov-report=term-missing
+```
+
+Generate HTML coverage report:
+
+```bash
+pytest --cov=. --cov-report=html
+```
+
+Coverage snapshot:
+
+![Test coverage](doc/test_coverage.png)
 
 ---
 
@@ -306,6 +333,14 @@ AI tools were used to assist with:
 * GitHub Copilot
 
 All code was reviewed and adapted manually.
+
+---
+
+## 📄 Curriculum
+
+You can view my resume here:
+
+[Google Docs CV](https://docs.google.com/document/d/16Gge30BhJWAvazj4vtuSYrwq2aH0gybz/edit?usp=sharing&ouid=108186399978475123725&rtpof=true&sd=true)
 
 ---
 
