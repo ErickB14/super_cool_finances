@@ -1,0 +1,8 @@
+Ya tengo los endpoints de fondeo y cargos:
+- POST  /deposit
+- POST  /withdraw
+
+Quiero agregarle a ambos endpoints un mecanismo de idempotencia para evitar
+doble abono o doble cargo si el cliente reenvia el mismo request.
+El valor de esa llave va a ser el valor en la tabla de accounts de ttk_tracking_id .
+El valor debe de viajar en el header con el valor de idempotency-key
