@@ -295,6 +295,30 @@ This service is designed to be deployed as a cloud-native application:
 
 ---
 
+## 🧭 Technology Choices
+
+This version keeps the architecture simple and practical for a technical assessment.
+
+* **PostgreSQL (Neon):** chosen for quick setup and because Neon is a platform I already use for my tests.
+* **Python:** chosen because it is easy to learn and I already have hands-on experience using it.
+* **FastAPI:** chosen for fast API development and clear request/response modeling, with smooth integration across database backends.
+* **Render:** chosen because I use it frequently for testing and fast deployments on the free tier.
+* **SQLAlchemy:** chosen to simplify database interaction and keep persistence logic clean in application code.
+* **Pydantic:** chosen to simplify input/output payload validation and schema consistency.
+
+### Tradeoff Considered
+
+I considered implementing stored procedures for stronger database-side control and stricter data-layer architecture.
+For this test-focused version, the business logic was implemented in application code to keep delivery straightforward.
+
+### Potential Next Improvements
+
+* Credit card payment flows
+* Settlement processing workflows
+* Account-to-account transfers
+
+---
+
 ## 🧪 Tests
 
 Test strategy:
